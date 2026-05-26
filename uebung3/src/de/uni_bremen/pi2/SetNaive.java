@@ -67,7 +67,7 @@ public class SetNaive<E> extends Set<E>
         Node<E> current  = getHead().getNext();
 
         //Start moving the head until it reaches the last node, which connected to null:
-        while (current.getElement() != null){
+        while (current != null){
             if (current.getElement().equals(element)){
                 //connect left side item of our founded to the right side node of founded element:
                 current.setNext(current.getNext());

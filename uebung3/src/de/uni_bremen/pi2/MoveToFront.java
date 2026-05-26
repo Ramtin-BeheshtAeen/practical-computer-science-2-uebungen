@@ -31,10 +31,10 @@ public class MoveToFront<E> extends SetNaive<E> {
         Node<E> current  = getHead().getNext();
 
         //Start moving the head until it reaches the last node, which connected to null:
-        while (current.getElement() != null){
+        while (current != null){
             if (current.getElement().equals(element)){
                 //connect left side item of our founded to the right side node of founded element:
-                current.setNext(current.getNext());
+                previous.setNext(current.getNext());
                 //connect founded element to the head:
                 current.setNext(getHead());
                 // setting the current element as head:
@@ -50,4 +50,25 @@ public class MoveToFront<E> extends SetNaive<E> {
         return false; // Ersetzen
     }
 }
+
+
+/* JShell code for testing:
+import de.uni_bremen.*;
+import de.uni_bremen.pi2.MoveToFront;
+
+    MoveToFront<String> list = new MoveToFront<String>();
+    list.add("first node");
+    list.add("second node");
+    list.add("third node");
+    list.add("fourth node");
+    list.add("fifth node");
+    list.add("sixth node");
+    list.forEach(System.out::println);
+
+    // searching for fourth node:
+    list.contains("fourth node");
+    list.forEach(System.out::println);
+
+
+ */
 
