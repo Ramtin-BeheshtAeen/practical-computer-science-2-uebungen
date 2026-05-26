@@ -16,6 +16,20 @@ public class SetNaive<E> extends Set<E>
     void addToList(final E element)
     {
         // Hier das Einfügen an den Anfang implementieren.
+
+        /*
+        * TODO: 1. Create the new node
+        * TODO: 2. Update the Set's head to be the new node
+        * */
+
+
+        /* Ramtin: */
+        // Create new Node:
+        Node<E> newElement = new Node<>(element , getHead());
+        // Setting new Node as the head:
+        setHead(newElement);
+
+
     }
 
     /**
