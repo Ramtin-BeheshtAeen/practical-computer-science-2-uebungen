@@ -37,7 +37,7 @@ public class Array<E>
            }
            E[] tempArray  = (E[]) new Object[newCapacity];
 
-           for (int i=0; i < size(); i++){
+           for(int i=0; i < size(); i++){
                tempArray[i] = buffer[i];
            }
 
