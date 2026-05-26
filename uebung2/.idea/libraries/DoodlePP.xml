@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="DoodlePP">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/out/production/DoodlePP" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/out/production/DoodlePP" />
+    </excluded>
+  </library>
+</component>
