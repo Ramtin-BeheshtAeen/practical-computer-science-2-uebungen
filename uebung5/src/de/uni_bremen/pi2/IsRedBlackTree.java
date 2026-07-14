@@ -59,7 +59,7 @@ public class IsRedBlackTree
             int leftHeight  =  checkNode(node.children[LEFT]);
             int rightHeight = checkNode(node.children[RIGHT]);
             //you don't walk through both simultaneously. So you only need one of leftHeight
-            //Checl of the tree is healthy and have same black height at both sides
+            //Check of the tree is healthy and have same black height at both sides
             if (leftHeight != rightHeight) {
                 throw new NotRedBlackException(UNEQUAL_BLACK_HEIGHT);
             }
