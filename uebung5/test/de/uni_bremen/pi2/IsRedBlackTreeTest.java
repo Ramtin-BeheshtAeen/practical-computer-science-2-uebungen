@@ -12,4 +12,6 @@ public class IsRedBlackTreeTest
     // Testet hier, ob IsRedBlackTree.check richtig funktioniert
     // und dann damit, ob RBTree richtig funktioniert. toString-
     // Methoden brauchen nicht getestet zu werden.
+
+
 }
