@@ -68,6 +68,7 @@ public class Maze
     {
         while (!path.isEmpty()) {
             // TODO: Aufgabe 1 (Zeilen 41-43 und 53-61 der Musterlösung)
+
         }
         return null;
     }

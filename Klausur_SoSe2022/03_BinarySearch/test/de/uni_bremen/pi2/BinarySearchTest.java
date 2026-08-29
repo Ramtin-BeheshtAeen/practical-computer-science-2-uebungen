@@ -17,7 +17,7 @@ public class BinarySearchTest
     @Test
     public void testLeeresArray()
     {
-        assertEquals(-1, BinarySearch.binarySearch(new Integer[] {}, 5));
+        assertEquals(-1, BinarySearch2.binarySearch(new Integer[] {}, 5));
     }
 
     /** Ein vorhandener Schlüssel wird an seiner Position gefunden. */
@@ -25,9 +25,9 @@ public class BinarySearchTest
     public void testGefunden()
     {
         final Integer[] array = {1, 3, 5, 7, 9};
-        assertEquals(0, BinarySearch.binarySearch(array, 1));
-        assertEquals(2, BinarySearch.binarySearch(array, 5));
-        assertEquals(4, BinarySearch.binarySearch(array, 9));
+        assertEquals(0, BinarySearch2.binarySearch(array, 1));
+        assertEquals(2, BinarySearch2.binarySearch(array, 5));
+        assertEquals(4, BinarySearch2.binarySearch(array, 9));
     }
 
     /** Ein Schlüssel kleiner als alle Elemente hat die Einfügeposition 0. */
@@ -35,7 +35,7 @@ public class BinarySearchTest
     public void testKleinerAlsAlle()
     {
         final Integer[] array = {2, 4, 6, 8};
-        assertEquals(-1, BinarySearch.binarySearch(array, 1));
+        assertEquals(-1, BinarySearch2.binarySearch(array, 1));
     }
 
     /** Ein Schlüssel größer als alle Elemente hat die Einfügeposition am Ende. */
@@ -43,7 +43,7 @@ public class BinarySearchTest
     public void testGroesserAlsAlle()
     {
         final Integer[] array = {2, 4, 6, 8};
-        assertEquals(-1 - 4, BinarySearch.binarySearch(array, 9));
+        assertEquals(-1 - 4, BinarySearch2.binarySearch(array, 9));
     }
 
     /** Ein Schlüssel zwischen zwei Elementen hat die richtige Einfügeposition. */
@@ -51,9 +51,9 @@ public class BinarySearchTest
     public void testDazwischen()
     {
         final Integer[] array = {2, 4, 6, 8};
-        assertEquals(-1 - 1, BinarySearch.binarySearch(array, 3));
-        assertEquals(-1 - 2, BinarySearch.binarySearch(array, 5));
-        assertEquals(-1 - 3, BinarySearch.binarySearch(array, 7));
+        assertEquals(-1 - 1, BinarySearch2.binarySearch(array, 3));
+        assertEquals(-1 - 2, BinarySearch2.binarySearch(array, 5));
+        assertEquals(-1 - 3, BinarySearch2.binarySearch(array, 7));
     }
 
     /** In einem einelementigen Array wird korrekt gesucht. */
@@ -61,9 +61,9 @@ public class BinarySearchTest
     public void testEinElement()
     {
         final Integer[] array = {5};
-        assertEquals(0, BinarySearch.binarySearch(array, 5));
-        assertEquals(-1, BinarySearch.binarySearch(array, 3));
-        assertEquals(-1 - 1, BinarySearch.binarySearch(array, 7));
+        assertEquals(0, BinarySearch2.binarySearch(array, 5));
+        assertEquals(-1, BinarySearch2.binarySearch(array, 3));
+        assertEquals(-1 - 1, BinarySearch2.binarySearch(array, 7));
     }
 
     /**
@@ -76,7 +76,7 @@ public class BinarySearchTest
     {
         final Integer[] array = {0, 2, 4, 6, 8, 10, 12};
         for (int key = -2; key <= 14; ++key) {
-            final int result = BinarySearch.binarySearch(array, key);
+            final int result = BinarySearch2.binarySearch(array, key);
             if (result >= 0) {
                 assertEquals(Integer.valueOf(key), array[result], "Falsche Fundstelle für " + key);
             }

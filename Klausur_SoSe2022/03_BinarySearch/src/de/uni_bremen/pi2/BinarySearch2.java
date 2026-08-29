@@ -3,7 +3,7 @@ package de.uni_bremen.pi2;
 /**
  * Die Klasse implementiert die binäre Suche in einem sortierten Array.
  */
-public class BinarySearch
+public class BinarySearch2
 {
     /**
      * Sucht mit dem Verfahren der binären Suche einen Schlüssel in einem
@@ -23,7 +23,19 @@ public class BinarySearch
      */
     public static <E extends Comparable<E>> int binarySearch(final E[] array, final E key)
     {
-        // TODO: Aufgabe 3 (Zeilen 29-44 der Musterlösung)
-        return 0;
+        int high = array.length - 1; //inclusive
+        int low  = 0;
+
+        while(low <= high){
+            int mid = (low + high) / 2;
+            if(array[mid].compareTo(key) < 0){
+                low = mid + 1;
+            }
+            else if (array[mid].compareTo(key) > 0){
+                high = mid - 1;
+            }
+            else {return mid;}
+        }
+        return -1 -low;
     }
 }

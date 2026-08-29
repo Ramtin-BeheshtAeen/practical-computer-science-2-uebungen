@@ -1,0 +1,29 @@
+package de.uni_bremen.pi2;
+
+/**
+ * Die Klasse berechnet die benötigte Kapazität eines Arrays dynamischer Größe.
+ */
+public class Capacity
+{
+    /**
+     * Berechnet die neue Kapazität eines Arrays dynamischer Größe, sodass ein
+     * bestimmter Index hineinpasst.
+     *
+     * Ausgehend von der aktuellen Kapazität wird die Kapazität so lange
+     * verdoppelt, bis der geforderte Index hineinpasst. Ist die aktuelle
+     * Kapazität 0, wird mit 1 begonnen. Kann nicht mehr verdoppelt werden,
+     * ohne den Wertebereich von int zu verlassen, wird die Kapazität auf
+     * Integer.MAX_VALUE gesetzt.
+     *
+     * @param currentCapacity Die aktuelle Kapazität. Ist mindestens 0.
+     * @param indexThatMustFit Der Index, der hineinpassen muss, d.h. die neue
+     *         Kapazität muss echt größer als dieser Index sein. Ist mindestens 0.
+     * @return Die neue Kapazität, die mindestens indexThatMustFit + 1 beträgt,
+     *         höchstens jedoch Integer.MAX_VALUE.
+     */
+    public static int grow(final int currentCapacity, final int indexThatMustFit)
+    {
+        // TODO: Aufgabe 1 (Zeilen 27-31 der Musterlösung)
+
+    }
+}

@@ -24,6 +24,5 @@ public class Capacity
     public static int grow(final int currentCapacity, final int indexThatMustFit)
     {
         // TODO: Aufgabe 1 (Zeilen 27-31 der Musterlösung)
-        return 0;
     }
 }
