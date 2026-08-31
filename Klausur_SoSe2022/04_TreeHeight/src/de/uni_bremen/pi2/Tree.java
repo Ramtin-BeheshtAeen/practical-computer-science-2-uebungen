@@ -15,7 +15,7 @@ public class Tree
      */
     public static <E> int treeHeight(final Node<E> root)
     {
-        // TODO: Aufgabe 4 (Zeile 18 der Musterlösung)
-        return 0;
+
+
     }
 }

@@ -23,18 +23,17 @@ public class BinarySearch2
      */
     public static <E extends Comparable<E>> int binarySearch(final E[] array, final E key)
     {
-        int high = array.length - 1; //inclusive
+        int high = array.length - 1;
         int low  = 0;
-
         while(low <= high){
             int mid = (low + high) / 2;
             if(array[mid].compareTo(key) < 0){
                 low = mid + 1;
             }
-            else if (array[mid].compareTo(key) > 0){
+            else if(array[mid].compareTo(key) > 0){
                 high = mid - 1;
             }
-            else {return mid;}
+            else{return mid;}
         }
         return -1 -low;
     }

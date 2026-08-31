@@ -67,7 +67,21 @@ public class Maze
     private static Stack<Integer> solve(final Maze.Labyrinth maze, final Stack<Integer> path)
     {
         while (!path.isEmpty()) {
-            // TODO: Aufgabe 1 (Zeilen 41-43 und 53-61 der Musterlösung)
+
+            do {
+                path.set(path.size() - 1 , path.peek() + 1);
+            } while (path.peek() <= 3 && !(maze.isValid(path)) );
+
+            //check if it is the target:
+            if ((maze.targetReached(path))){
+                return path;
+            }
+            //check if top is bigger than 3:
+            else if (path.peek() > 3) {
+                path.pop();
+
+            } else {path.push(-1);}
+
 
         }
         return null;
