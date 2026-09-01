@@ -48,7 +48,11 @@ public class List
      */
     public static <E> Elem<E> concatRecursive(final Elem<E> first, final Elem<E> second)
     {
-        return null;
+        if(first==null){
+            return second;
+        }
+        first.setNext(concatRecursive(first.getNext(), second));
+        return first;
     }
 
     // ==================================================================
@@ -107,8 +111,12 @@ public class List
         // Basisfall: index == 0  ->  new Elem<>(value, first)
         // Sonst:     first.setNext(insertRecursive(?, ?, value));  return ?;
         //            Beachte: der Index muss in jedem Aufruf kleiner werden.
-        return null;
-        if()
+
+       if(index == 0){
+           return new Elem<E>(value, first);
+       }
+       first.setNext(insertRecursive(first.getNext(), index-1, value));
+       return first;
     }
 
     // ==================================================================
@@ -142,7 +150,13 @@ public class List
         // TODO: Aufgabe 1 (Zeilen 3-11 der Musterlösung)
         // Drei Fälle: Liste leer / erstes Element passt / sonst rekursiv.
         // Der dritte Fall erzeugt ein neues Elem, es wird nichts umgehängt.
-        return null;
+        if (first == null || first==key){
+            return first.getNext();
+        } else {
+            first.setNext(removeKey(first.getNext(), key));
+        }
+
+        return first;
     }
 
     // ==================================================================
@@ -169,7 +183,16 @@ public class List
         // TODO: Aufgabe 2, iterative Variante.
         // Gleiche Struktur wie insertIterative: Sonderfall index == 0,
         // sonst mit einer Schleife zum Element davor laufen und aushängen.
-        return null;
+        if (index==0){
+            return first.getNext();
+        }
+
+        Elem<E> currentElement = first;
+        for (int i = 0; i < index - 1; i++){
+            currentElement = currentElement.getNext();
+        }
+        currentElement.setNext(currentElement.getNext().getNext());
+        return first;
     }
 
     /**
@@ -191,7 +214,11 @@ public class List
         // TODO: Aufgabe 2 (Zeilen 25-29 der Musterlösung)
         // Basisfall: index == 0  ->  den Rest der Liste zurückgeben.
         // Sonst:     first.setNext(removeRecursive(?, ?));  return ?;
-        return null;
+        if(index == 0){
+            return first.getNext();
+        }
+        first.setNext(removeRecursive(first.getNext(), index -1));
+        return first;
     }
 }
 
