@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="RoutePlanner">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/out/production/RoutePlanner" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/out/production/RoutePlanner" />
+    </excluded>
+  </library>
+</component>
