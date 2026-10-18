@@ -71,9 +71,6 @@ class Map
                 toNode.getEdges().add(new Edge(fromNode, cost));
 
 
-
-
-
             }
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -102,14 +99,27 @@ class Map
      * @return Der Knoten, der der Position am nächsten ist. null,
      *         falls es einen solchen nicht gibt.
      */
-    Node getClosest(final double x, final double y)
-    {
-        return null; // Ersetzen
+    Node getClosest(final double x, final double y) {
+        // Nutzt Node.reachedFromAtCosts für jeden Knoten.
+        final Node click = new Node(0, x, y);
+        Node best = null;
+        double bestDistance = Double.POSITIVE_INFINITY;   // "infinitely far"
+        for (final Node node : nodes.values()) {
+            final double d = node.distance(click);
+            if (d < bestDistance) {
+                best = node;
+                bestDistance = d;     // remember the new record
+            }
+        }
+        return best;
+
     }
 
+
     /** Löschen aller Vorgängereinträge und Setzen aller Kosten auf unendlich. */
-    void reset()
-    {
-        // Nutzt Node.reachedFromAtCosts für jeden Knoten.
+    void reset() {
+        for (Node node : nodes.values() ) {
+            node.reachedFromAtCosts( null , Double.POSITIVE_INFINITY);
+        }
     }
 }

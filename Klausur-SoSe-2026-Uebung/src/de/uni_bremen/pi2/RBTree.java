@@ -25,6 +25,35 @@ public class RBTree
         //   (2) Zählen: was ein Kind beiträgt, hängt von seiner FARBE ab (isBlack()).
         // Vorher in Worten beantworten: welchen Wert soll ein Baum aus nur
         // einer schwarzen Wurzel liefern? (Siehe testNurWurzel.)
-        return -2; // Platzhalter, damit vor deiner Lösung kein Test zufällig grün ist
+        //return -2; // Platzhalter, damit vor deiner Lösung kein Test zufällig grün ist
+
+
+        if (root==null){
+            return 0;
+        }
+
+        int left = blackDepthOfLeafs(root.getLeft());
+        int right = blackDepthOfLeafs(root.getRight());
+
+        if (left == -1 || right == -1){
+            return -1;
+        }
+
+        if (root.getLeft() != null && root.getLeft().isBlack()){
+            left += 1;
+        }
+        if (root.getRight() != null && root.getRight().isBlack()){
+            right += 1;
+        }
+
+        if (left == right){
+            return  left;
+
+        } else {
+            return -1;
+        }
+
+
+
     }
 }

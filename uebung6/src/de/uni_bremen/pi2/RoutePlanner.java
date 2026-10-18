@@ -230,7 +230,9 @@ class RoutePlanner extends JPanel
 
     private void shortestPath(final Node from, final Node to)
     {
-        // Hier fehlt etwas
+        //start
+        //goal
+        
     }
 
     /**
