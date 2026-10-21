@@ -21,5 +21,17 @@ public class Quicksort
     public static <E extends Comparable<E>> void quicksort(final E[] array)
     {
         // TODO: Aufgabe 4 (Musterlösung: 1 Zeile hier + Hilfsmethode mit 7 Zeilen)
+        quicksort2(array, 0, array.length);
+
     }
+
+    private static <E extends Comparable<E>> void quicksort2(final E[] array, final int low, final int high){
+        if(low >= high){
+            return;
+        }
+        int pivot =  Partition.partition(array, low, high);
+        quicksort2(array, low, pivot);
+        quicksort2(array, pivot + 1, high);
+    }
+
 }

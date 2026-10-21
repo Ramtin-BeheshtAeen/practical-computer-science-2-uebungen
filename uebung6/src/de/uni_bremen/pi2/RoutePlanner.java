@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.PriorityQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -232,7 +233,41 @@ class RoutePlanner extends JPanel
     {
         //start
         //goal
-        
+
+        //put start in the box
+        //while box is not empty:
+            //take smallest out
+            //for each road from it:
+                // if <check>:
+                    //remember it , put it in the box
+
+        /*
+        * 1. start: costs 0, prev null                (c)
+        2. put start into the frontier
+        3. while the frontier is not empty:
+            node = frontier.poll()               (d) closest unfinished
+            if node == goal: stop                 (we only need one route)
+            for each edge of node:                (a)
+                newCosts = node's costs + edge's costs
+                if newCosts < target's costs:      strictly smaller!
+                    target.reachedFromAtCosts(node, newCosts)   (b)
+                    frontier.add(target)
+        * */
+        final PriorityQueue<Node> frontier = new PriorityQueue<>(
+                (a, b) -> Double.compare(a.getCosts(), b.getCosts()));
+
+        frontier.add(start);
+        while(!frontier.isEmpty()) {
+            Node node = frontier.poll();
+            if (node == goal) break;
+            for (Edge edge : node.getEdges()){
+                Node t = edge.getTarget();
+
+            }
+
+        }
+
+
     }
 
     /**
