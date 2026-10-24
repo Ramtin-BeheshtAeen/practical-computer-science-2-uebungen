@@ -18,7 +18,11 @@ public class Tree
      */
     public static <E> int treeHeight(final Node<E> root)
     {
-        // TODO: Aufgabe 4 (Musterlösung: 1 Zeile)
-        return -1;
+        if (root == null){
+            return 0;
+        }
+        int left  = treeHeight(root.getLeft());
+        int right =  treeHeight(root.getRight());
+        return Math.max(left, right) + 1;
     }
 }

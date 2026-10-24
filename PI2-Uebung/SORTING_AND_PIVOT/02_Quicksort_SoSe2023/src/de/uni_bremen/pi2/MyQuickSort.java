@@ -62,7 +62,7 @@ public class MyQuickSort {
         int i = low;
         E pivot = array[high - 1];
 
-        for(int j = low; j<high; j++){
+        for(int j = low; j < high; j++){
             if (array[j].compareTo(pivot) < 0){
                 swap(array, i, j);
                 i++;

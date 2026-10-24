@@ -18,7 +18,12 @@ public class Tree
      */
     public static <E> int nodeCount(final Node<E> root)
     {
-        // TODO: Aufgabe 4 (Musterlösung: 1 Zeile)
-        return -1;
+        if(root == null){
+            return 1;
+        }
+        int left = nodeCount(root.getLeft());
+        int right = nodeCount(root.getRight());
+        return left + right + 1;
+
     }
 }

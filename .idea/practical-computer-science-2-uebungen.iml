@@ -7,9 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Klausur_WiSe2022_23/01_Backtracking/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Klausur-SoSe-2026-Uebung/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Klausur-SoSe-2026-Uebung/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/uebung6/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PI2-Uebung/SORTING_AND_PIVOT/02_Quicksort_SoSe2023/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PI2-Uebung/SORTING_AND_PIVOT/02_Quicksort_SoSe2023/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/PI2-Uebung/SORTING_AND_PIVOT/01_Partition_Pivot_WiSe2023_SoSe2026/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PI2-Uebung/SORTING_AND_PIVOT/01_Partition_Pivot_WiSe2023_SoSe2026/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
