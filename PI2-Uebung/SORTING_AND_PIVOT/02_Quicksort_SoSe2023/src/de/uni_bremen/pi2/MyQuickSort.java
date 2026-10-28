@@ -26,64 +26,33 @@
 package de.uni_bremen.pi2;
 
 public class MyQuickSort {
+    public <E> void swap(final E[] array, final int a, final int b){
+        E temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
 
-    public <E extends Comparable<E>> int partition(final E[] array, final int low, final int high){
+    public <E extends Comparable<E>> int partition(E[] array, int low, int high){
         int i = low;
-        E pivot = array[high];
-
-        for(int j = low; j<high; j++){
-            if (array[j].compareTo(pivot) < 0){
-                swap(array, i, j);
+        E pivotElement = array[high];
+        for(int j = low;  j < high; j++){
+            if(array[j].compareTo(pivotElement) < 0){
+                swap(array, i , j);
                 i++;
             }
         }
         swap(array, i, high);
         return i;
-
     }
 
-    public  <E> void swap(final E[] array, final int a, final int b){
-        final E temp  = array[a];
-        array[a]      =  array[b];
-        array[b]      = temp;
-    }
-    public <E extends Comparable<E>> void quicksort(final E[] array, final int low, final int high){
+    public  <E extends Comparable<E>> void quicksort(E[] array, int low, int high){
         if (low >= high){
             return;
         }
         int pivot = partition(array, low, high);
-        quicksort(array, low, pivot -1);
+        quicksort(array, 0 , pivot - 1);
         quicksort(array, pivot + 1, high);
     }
-
-
-
-    public <E extends Comparable<E>> int partition2(final E[] array, final int low, final int high){
-        int i = low;
-        E pivot = array[high - 1];
-
-        for(int j = low; j < high; j++){
-            if (array[j].compareTo(pivot) < 0){
-                swap(array, i, j);
-                i++;
-            }
-        }
-        swap(array, i, high -1);
-        return i;
-
-    }
-
-    public <E extends Comparable<E>> void quicksortHighNotInclusive(final E[] array, final int low, final int high){
-        if (low >= high){
-            return;
-        }
-        int pivot = partition2(array, low, high);
-        quicksortHighNotInclusive(array, low, pivot);
-        quicksortHighNotInclusive(array, pivot + 1, high);
-    }
-
-
-
 
     public void main(){
         // make an array with 4 element inside:
@@ -98,7 +67,7 @@ public class MyQuickSort {
 
         System.out.print("\n");
 
-        quicksortHighNotInclusive(myArray2, 0, myArray2.length);
+        //quicksortHighNotInclusive(myArray2, 0, myArray2.length);
         for (Integer integer : myArray2) {
             System.out.print(integer + ", ");
         }

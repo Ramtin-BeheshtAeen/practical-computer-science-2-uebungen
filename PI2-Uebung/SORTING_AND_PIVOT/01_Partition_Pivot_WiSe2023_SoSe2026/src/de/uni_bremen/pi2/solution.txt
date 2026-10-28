@@ -23,8 +23,14 @@ public class Partition
      */
     public static <E extends Comparable<E>> int partition(final E[] array, final E pivot)
     {
-        // TODO: Aufgabe 3 (Musterlösung: 10 Zeilen)
-        return -1;
+        int i = 0;
+        for (int j = 0; j <= array.length - 1; j++){
+            if(array[j].compareTo(pivot) < 0){
+                swap(array, i, j);
+                i++;
+            }
+        }
+        return i;
     }
 
     /**
