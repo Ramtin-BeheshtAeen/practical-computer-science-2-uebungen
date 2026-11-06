@@ -58,6 +58,28 @@ public class MST
             final int[] edge = frontier.poll();
 
             // TODO: Aufgabe 5 (Zeilen 63-70 der Musterlösung)
+            //edge[0] is start //edge[1] is neighbour
+            int from = edge[0];
+            int to   = edge[1];
+
+            // is the to new?:
+            if (edges[to] == -1 ){
+                // write the letter: to hangs on from:
+                edges[to] = from;
+
+                //put all roads from to into the frontier,
+                // but only those leading to cities not in the tree yet (!= null and no letter)
+                for (int neighbour = 0 ; neighbour < adjacencyMatrix.length; ++neighbour) {
+                    if (adjacencyMatrix[to][neighbour] != null) {
+                        frontier.add(new int[] {to, neighbour});
+                    }
+                }
+            } else { continue;}
+
+
+
+
+
         }
 
         // Der Startknoten hat keinen Vorgänger.

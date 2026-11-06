@@ -1,0 +1,31 @@
+    public static <E> Elem<E> concatIterative(final Elem<E> first, final Elem<E> second)
+    {
+      if (first == null){
+          return second;
+      }
+      Elem<E> last = first;
+      for(; last.getNext() != null; last = last.getNext());
+      last.setNext(second);
+      return first;
+    }
+
+    /**
+     * Hängt zwei einfach verkettete Listen aneinander. Rekursive Lösung.
+     *
+     * Ist die erste Liste leer, ist das Ergebnis die zweite Liste. Andernfalls
+     * wird der Rest der ersten Liste rekursiv mit der zweiten Liste verkettet.
+     *
+     * @param first Das erste Element der ersten Liste. Darf null sein.
+     * @param second Das erste Element der zweiten Liste. Darf null sein.
+     * @param <E> Der Typ der Werte in den Listen.
+     * @return Das erste Element der zusammengehängten Liste.
+     */
+    public static <E> Elem<E> concatRecursive(final Elem<E> first, final Elem<E> second)
+    {
+        // TODO: Basisfall hast du schon: erste Liste leer -> zweite Liste zurück.
+        // TODO: Sonst: first.setNext(concatRecursive(?, ?)); return ?;
+        //       Kein Schleife, keine Hilfsvariable. 5 Zeilen insgesamt.
+        if (first == null) {return second;}
+        first.setNext(concatRecursive(first.getNext(), second));
+        return first;
+    }

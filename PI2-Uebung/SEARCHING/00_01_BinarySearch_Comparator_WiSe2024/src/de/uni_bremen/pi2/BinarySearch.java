@@ -1,5 +1,7 @@
 package de.uni_bremen.pi2;
 
+import javax.swing.*;
+import java.security.Key;
 import java.util.Comparator;
 
 /**
@@ -27,6 +29,21 @@ public class BinarySearch
     public static <T> int binarySearch(final T[] array, final T key, final Comparator<T> order)
     {
         // TODO: Aufgabe 3 (Musterlösung: 12 Zeilen)
-        return -2;
+        int left  = 0;
+        int right = array.length - 1 ;
+
+        while(left <= right){
+            int mid = (left + right) / 2;
+            int c = order.compare(array[mid], key);
+            if (c == 0 ){
+                return mid;
+            } else if (c < 0) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
     }
 }
